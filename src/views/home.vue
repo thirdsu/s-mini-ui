@@ -1,18 +1,10 @@
 <template>
 	<FormField
-		label="瞬时产量(10⁴m³/d)"
-		v-model="sscl"
+		label="年龄"
+		v-model="age"
 		:required="true"
 		:clearable="true"
-		name="sscl"
-		:readonly="false"
-	/>
-	<FormField
-		label="瞬时产量(10⁴m³/d)"
-		v-model="sscl"
-		:required="true"
-		:clearable="true"
-		name="sscl"
+		name="age"
 		:readonly="false"
 	/>
 	<van-button style="margin-top: 20px" @click="submit">提交</van-button>
@@ -27,13 +19,13 @@ export default {
 		FormField,
 	},
 	setup() {
-		const sscl = ref("123");
+		const age = ref("13");
 		const submit = () => {
-			sscl.value = "122";
-			console.log(("sscl", sscl.value));
+			age.value = "12";
+			console.log(("age", age.value));
 		};
 		return {
-			sscl,
+			age,
 			submit,
 		};
 	},

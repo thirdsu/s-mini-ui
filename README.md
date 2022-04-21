@@ -1,7 +1,11 @@
-# Vue 3 + Vite
+# 下载
+git clone https://github.com/thirdsu/s-mini-ui.git
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 安装
+npm i
 
-## Recommended IDE Setup
+## 启动
+npm run dev
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## 打包
+npm run build
