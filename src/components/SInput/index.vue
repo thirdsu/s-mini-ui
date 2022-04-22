@@ -31,15 +31,40 @@
 </template>
 
 <script>
-import { reactive, onUpdated, ref, watch, getCurrentInstance, inject } from "vue";
+import { reactive, toRefs, watch, inject } from "vue";
 export default {
 	name: "SInput",
-	// props: ["type", "name", "modelValue", "readonly", "required", "clearable"],
+	props: {
+		// 输入框类型
+		type: {
+			type: String,
+			default: "text",
+		},
+		// 输入框标识，有验证规则时需传入
+		name: { type: String },
+		// 值
+		modelValue: {
+			default: "",
+		},
+		// 是否只读
+		readonly: {
+			type: Boolean,
+			default: false,
+		},
+		// 是否必需
+		required: {
+			type: Boolean,
+			default: false,
+		},
+		// 是否可清空值
+		clearable: {
+			type: Boolean,
+			default: false,
+		},
+	},
 	setup(props, context) {
-		let { attrs } = context;
-		console.log(context.attrs);
 		const state = reactive({
-			value: attrs.modelValue,
+			value: props.modelValue,
 			errMsg: "",
 			noteMsg: "",
 		});
@@ -54,7 +79,7 @@ export default {
 			context.emit("focus", state.value);
 		};
 		const renderType = () => {
-			let type = attrs.type;
+			let type = props.type;
 			let typeArr = ["number", "tel", "password"];
 			if (!type || typeof type !== "string" || !typeArr.includes(type)) {
 				return "";
@@ -77,15 +102,12 @@ export default {
 			state.noteMsg = "";
 			context.emit("update:modelValue", "");
 		};
-		// watch([() => attrs.modelValue], (newVal, oldVal) => {
-		// 	state.value = newVal[0];
-		// });
-		onUpdated(() => {
-			state.value = context.attrs.modelValue;
+		watch([() => props.modelValue], (newVal, oldVal) => {
+			state.value = newVal[0];
 		});
 		return {
 			state,
-			...attrs,
+			...toRefs(props),
 			updateInput,
 			validate,
 			reset,

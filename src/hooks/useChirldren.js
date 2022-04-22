@@ -8,9 +8,6 @@ export default function useChildren(){
         }
     }
 
-    onMounted(()=>{
-        genChildren()
-    })
     return {
         genChildren,
     }
