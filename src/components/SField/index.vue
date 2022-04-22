@@ -1,5 +1,5 @@
 <template>
-	<van-cell class="FormFieldWrap">
+	<van-cell class="SFieldWrap">
 		<template #title>
 			{{ label }}
 		</template>
@@ -31,6 +31,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.FormFieldWrap {
+.SFieldWrap {
 }
 </style>

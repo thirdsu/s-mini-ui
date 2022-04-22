@@ -1,6 +1,6 @@
 <template>
 	<SForm ref="ruleForm">
-		<FormField
+		<SField
 			label="年龄"
 			v-model="age"
 			:required="true"
@@ -15,11 +15,11 @@
 
 <script>
 import { ref } from "vue";
-import { SInput, FormField, SForm } from "@c/index.js";
+import { SInput, SField, SForm } from "@c/index.js";
 export default {
 	components: {
 		SInput,
-		FormField,
+		SField,
 		SForm,
 	},
 	setup() {
