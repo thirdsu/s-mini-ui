@@ -17,8 +17,14 @@ export default {
 	components: {
 		SInput,
 	},
-	props: ["label"],
+	props: {
+		label: {
+			type: String,
+			required: true,
+		},
+	},
 	setup(props) {
+		console.log("label", props.label);
 		onMounted(() => {
 			const { genChildren } = useChildren();
 			genChildren();

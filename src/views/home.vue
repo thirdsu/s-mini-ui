@@ -38,4 +38,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped>
+.comPage {
+	padding-top: 100px;
+	.comWrap {
+		.a {
+		}
+		.table {
+		}
+	}
+}
+</style>

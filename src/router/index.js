@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 // 1. Define route components.
 // These can be imported from other files
 const Home = () => import("@/views/home.vue");
+const VitrulList = () => import("@/views/vitrulList.vue");
 
 // 2. Define some routes
 // Each route should map to a component.
@@ -12,6 +13,13 @@ const routes = [
 		component: Home,
 		meta: {
 			keepAlive: true,
+		},
+	},
+	{
+		path: "/vlist",
+		component: VitrulList,
+		meta: {
+			keepAlive: false,
 		},
 	},
 ];
