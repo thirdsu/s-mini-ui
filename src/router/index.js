@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 // These can be imported from other files
 const Home = () => import("@/views/home.vue");
 const VitrulList = () => import("@/views/vitrulList.vue");
+const PromiseDemo=()=>import("@/views/promiseDemo.vue")
 
 // 2. Define some routes
 // Each route should map to a component.
@@ -13,6 +14,7 @@ const routes = [
 		component: Home,
 		meta: {
 			keepAlive: true,
+			title:'定制化表单UI组件'
 		},
 	},
 	{
@@ -20,8 +22,17 @@ const routes = [
 		component: VitrulList,
 		meta: {
 			keepAlive: false,
+			title:'虚拟列表简单实现'
 		},
 	},
+	{
+		path:"/spro",
+		component:PromiseDemo,
+		meta: {
+			keepAlive: false,
+			title:'手写promise实现'
+		},
+	}
 ];
 
 export const router = createRouter({
