@@ -4,6 +4,8 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const Home = () => import("@/views/home.vue");
 const VitrulList = () => import("@/views/vitrulList.vue");
 const PromiseDemo=()=>import("@/views/promiseDemo.vue")
+const transform=()=>import("@/views/transform.vue")
+const dontKnowJs=()=>import("@/views/dontKnowJs.vue")
 
 // 2. Define some routes
 // Each route should map to a component.
@@ -31,6 +33,22 @@ const routes = [
 		meta: {
 			keepAlive: false,
 			title:'手写promise实现'
+		},
+	},
+	{
+		path:"/trans",
+		component:transform,
+		meta: {
+			keepAlive: false,
+			title:'css-动画属性'
+		},
+	},
+	{
+		path:"/donjs",
+		component:dontKnowJs,
+		meta: {
+			keepAlive: false,
+			title:'你不知道的js'
 		},
 	}
 ];
